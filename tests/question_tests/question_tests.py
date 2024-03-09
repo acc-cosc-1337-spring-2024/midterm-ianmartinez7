@@ -5,6 +5,7 @@ import unittest
 #follow this example to add questions b, c, and d for testing including their functions
 from src.question_a.question_a import get_sum_of_evens, test_config
 from src.question_b.question_b import use_global
+from src.question_c.question_c import use_local_variable
 
 class Test_Config(unittest.TestCase):
 
@@ -19,5 +20,11 @@ class Test_Config(unittest.TestCase):
     def test_question_b(self):
         use_global = "Changed value"
         self.assertEqual (use_global, "Changed value")
+
+    def test_question_c(self):
+        num = 100
+        use_local_variable(num)
+        self.assertEqual(num, 100)
+        
 
 
